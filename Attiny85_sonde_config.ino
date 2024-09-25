@@ -9,14 +9,31 @@ String reg_77 = "FB";
 
 
 // Change serial Nummber to Call
-String reg_seriall = "R-9A1GIJ";
+String reg_seriall = "TEST1234";
+
+
+// Set power 0-7
+String reg_power = "7";
+
 
 void setup() {
   swsri.begin(9600);
-  //send_regCall();
+  delay(3000);
+  swsri.print(char(13));
+  delay(100);
+  swsri.print("STwsv");
+  delay(100);
+  swsri.print(char(13));
+  delay(100);
   send_reg75();
   send_reg76();
   send_reg77();
+  delay(100);
+  send_regCall();
+  delay(100);
+  send_regPwr();
+
+  
   
 }
 void loop() {
@@ -57,7 +74,19 @@ void send_reg77() {
 }
 void send_regCall() {
   delay(1000);
+  swsri.print("i");
+  delay(100);
   swsri.print(reg_seriall);
+  delay(100);
+  swsri.print(char(13));
+  delay(100);
+ 
+}
+void send_regPwr() {
+  delay(1000);
+  swsri.print("o");
+  delay(100);
+  swsri.print(reg_power);
   delay(100);
   swsri.print(char(13));
   delay(100);
