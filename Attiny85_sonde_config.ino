@@ -18,13 +18,11 @@ String reg_power = "7";
 
 void setup() {
   swsri.begin(9600);
-  delay(3000);
-  swsri.print(char(13));
-  delay(100);
+  delay(1000);
   swsri.print("STwsv");
   delay(100);
   swsri.print(char(13));
-  delay(100);
+  delay(3000);
   send_reg75();
   send_reg76();
   send_reg77();
