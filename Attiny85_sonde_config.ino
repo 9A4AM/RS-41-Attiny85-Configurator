@@ -1,5 +1,6 @@
 #include<SoftwareSerial.h>
 SoftwareSerial swsri(3,4); // RX,TX
+// SoftwareSerial on a non-crystal 8MHz AVR 9600 baud
 
 
 // register for 432.500MHz frequency
